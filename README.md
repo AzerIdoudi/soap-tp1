@@ -21,3 +21,21 @@ Finally, we updated the client to test the new functionality:
 
 We used await client.OperationNameAsync({ ... }) to call the new endpoints.
 We logged the results to the console to verify that the server was correctly processing the new math and conversion logic.
+
+"
+You can test your SOAP service using Postman:
+• Create a new POST request
+• URL: http://localhost:8000/calculator
+• Header: Content-Type: text/xml
+Body (raw XML) pour l'addition :
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:tns="http://example.com/calculator">
+ <soap:Body>
+ <tns:CalculatorRequest>
+ <tns:a>15</tns:a>
+ <tns:b>7</tns:b>
+ </tns:CalculatorRequest>
+ </soap:Body>
+</soap:Envelope>
+"
